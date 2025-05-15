@@ -40,3 +40,6 @@ if uploaded_file:
         # Step 8: Push to CRM simulation
         if st.button("📤 Push to CRM"):
             st.success(f"✅ Pushed summary to CRM with tags: {', '.join(tags)}")
+            st.info("📝 Remember to add context in the Ezekia note. I.e. tag the relevant people/companies.")
+
+
