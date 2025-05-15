@@ -10,7 +10,7 @@ if uploaded_file:
 
     # Step 2: Simulated transcript output
     st.subheader("📝 Transcript")
-    fake_transcript = "This is a simulated transcript of the uploaded audio file. User can make any edits to summary here."
+    fake_transcript = "This is a simulated transcript of the uploaded audio file. This is a simulated transcript of the uploaded audio file. This is a simulated transcript of the uploaded audio file. This is a simulated transcript of the uploaded audio file. This is a simulated transcript of the uploaded audio file. This is a simulated transcript of the uploaded audio file."
     st.write(fake_transcript)
 
     # Step 3: Template selector
