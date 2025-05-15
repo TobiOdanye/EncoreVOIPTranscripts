@@ -32,17 +32,10 @@ if uploaded_file:
 
         st.success("✅ Summary generated!")
 
-    # Step 6: Show and edit the summary
+    # Step 6: Refine summary FIRST
     if "summary" in st.session_state:
-        st.subheader("📝 Editable Summary")
-        edited_summary = st.text_area("Edit the summary below if needed:", st.session_state["summary"], height=300)
-
-        # Save the edited version
-        st.session_state["summary"] = edited_summary
-
-        # Step 7: Option to refine further
         st.subheader("🔁 Refine Summary")
-        refine_prompt = st.text_area("Refine the summary further (based on above)?", "")
+        refine_prompt = st.text_area("Refine the summary further (based on current version):", "")
 
         if st.button("↩️ Re-generate with refinement") and refine_prompt:
             previous = st.session_state["summary"]
@@ -50,6 +43,11 @@ if uploaded_file:
             st.session_state["summary"] = refined_summary
             st.session_state["history"] += f"\n\nRefine Prompt: {refine_prompt}\nRefined Summary: {refined_summary}"
             st.success("✅ Refined summary generated!")
+
+        # Step 7: Editable summary shown AFTER refinement
+        st.subheader("📝 Editable Summary")
+        edited_summary = st.text_area("Edit the summary below if needed:", st.session_state["summary"], height=300)
+        st.session_state["summary"] = edited_summary
 
         # Step 8: Tag selector
         tags = st.multiselect("🏷️ Select tags", [
@@ -63,4 +61,3 @@ if uploaded_file:
         if st.button("📤 Push to CRM"):
             st.success(f"✅ Pushed summary to CRM with tags: {', '.join(tags)}")
             st.info("📌 Remember to add context in the Ezekia note. I.e. Tag the relevant people/companies.")
-
