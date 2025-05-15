@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("🔧 UI Test: Audio Summarizer Workflow")
+st.title("🔧 UI Testing: Audio Summarizer Workflow")
 
 # Step 1: File uploader
 uploaded_file = st.file_uploader("📤 Upload a .wav file", type=["wav"])
