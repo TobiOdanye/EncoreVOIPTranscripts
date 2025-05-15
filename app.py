@@ -17,7 +17,7 @@ if uploaded_file:
     template = st.selectbox("🧩 Choose a summary template", ["Option 1", "Option 2"])
 
     # Step 4: Prompt input (shown only after template is selected)
-    user_prompt = st.text_input("💬 Enter your prompt for summary generation")
+    user_prompt = st.text_input("💬 Enter your prompt for summary generation. E.g. Focus on xyz.")
 
     # Step 5: Generate summary only when prompt is filled
     if user_prompt:
